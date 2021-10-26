@@ -6,7 +6,7 @@ const ManageService = () => {
     const [deleteservice, setDeleteservice] = useState(false)
 
     useEffect(() => {
-        fetch('http://localhost:9000/services')
+        fetch('https://agile-crag-74630.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [deleteservice]);
@@ -14,7 +14,7 @@ const ManageService = () => {
     const handlerToDelete = id => {
         const proceed = window.confirm('Are Sure to delete');
         if (proceed) {
-            axios.delete(`http://localhost:9000/services/${id}`)
+            axios.delete(`https://agile-crag-74630.herokuapp.com/services/${id}`)
                 .then(res => {
                     setDeleteservice(res.data.deletedCount)
                 })

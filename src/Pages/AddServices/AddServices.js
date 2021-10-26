@@ -5,13 +5,13 @@ import "./AddServices.css";
 
 const AddServices = () => {
     const { register, handleSubmit } = useForm();
-    const onSubmit = (data,e) => {
-        axios.post('http://localhost:9000/services', data)
+    const onSubmit = (data, e) => {
+        axios.post('https://agile-crag-74630.herokuapp.com/services', data)
             .then(res => {
-               if(res.data.insertedId){
-                   alert("Services added");
-                   e.target.reset();
-               }
+                if (res.data.insertedId) {
+                    alert("Services added");
+                    e.target.reset();
+                }
             })
     };
     return (

@@ -5,7 +5,7 @@ const Booking = () => {
     const [service, setService] = useState([]);
     const { bookinID } = useParams();
 
-    const url = `http://localhost:9000/services/${bookinID}`
+    const url = `https://agile-crag-74630.herokuapp.com/services/${bookinID}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
